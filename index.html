@@ -157,7 +157,13 @@ updateClock();
 </script>
 <div class="card">
 <h2>📊 LIVE MARKET BOARD</h2>
-<div id="quotes">Loading...</div>
+<div id="quotes">
+<p><b>NVDA</b> 🚀</p>
+<p><b>AVGO</b> 🚀</p>
+<p><b>AMD</b> 🚀</p>
+<p><b>TSM</b> 🚀</p>
+<p><b>PLTR</b> 🚀</p>
+</div>
 </div>
 
 <script>
@@ -187,7 +193,7 @@ async function loadQuotes() {
   }
 }
 
-loadQuotes();
+
 setInterval(loadQuotes,60000);
 </script>
 </body>
