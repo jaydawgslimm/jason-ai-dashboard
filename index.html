@@ -93,11 +93,16 @@ background:#00ff66;
 <div class="card">
 <h2>🤖 AI WATCHLIST</h2>
 
-<div class="ticker">NVDA</div>
-<div class="ticker">AVGO</div>
-<div class="ticker">AMD</div>
-<div class="ticker">TSM</div>
-<div class="ticker">PLTR</div>
+<div class="card">
+<h2>🤖 AI WATCHLIST</h2>
+
+<div class="ticker" onclick="showStock('NVDA')">NVDA</div>
+<div class="ticker" onclick="showStock('AVGO')">AVGO</div>
+<div class="ticker" onclick="showStock('AMD')">AMD</div>
+<div class="ticker" onclick="showStock('TSM')">TSM</div>
+<div class="ticker" onclick="showStock('PLTR')">PLTR</div>
+
+<div id="stockDetails" style="margin-top:20px;"></div>
 </div>
 
 <div class="card">
