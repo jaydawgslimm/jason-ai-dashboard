@@ -30,20 +30,7 @@ box-shadow:0 0 10px rgba(0,255,100,.3);
 
 .ticker{
   cursor:pointer;
-transition:.3s;
-}
 
-.ticker:hover{
-background:#00ff66;
-color:#000;
-transform:scale(1.05);
-display:inline-block;
-padding:10px;
-margin:5px;
-border:1px solid #00ff66;
-border-radius:8px;
-min-width:80px;
-}
 
 .big{
 font-size:24px;
@@ -64,7 +51,22 @@ animation:blink 1.5s infinite;
 }
 
 .progress{
-width:90%;
+w.ticker{
+display:inline-block;
+padding:10px;
+margin:5px;
+border:1px solid #00ff66;
+border-radius:8px;
+min-width:80px;
+cursor:pointer;
+transition:.3s;
+}
+
+.ticker:hover{
+background:#00ff66;
+color:#000;
+transform:scale(1.05);
+}idth:90%;
 height:25px;
 border:1px solid #00ff66;
 margin:10px auto;
@@ -209,9 +211,7 @@ async function loadQuotes() {
 
 setInterval(loadQuotes,60000);
 </script>
-  <script>
-
-function showStock(symbol){
+  
 
 const stocks = {
 
@@ -258,7 +258,7 @@ document.getElementById("stockDetails").innerHTML = `
   </script>
 <script>
 
-function showStock(symbol){
+
 
 const stocks = {
 
