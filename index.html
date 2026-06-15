@@ -201,5 +201,146 @@ async function loadQuotes() {
 
 setInterval(loadQuotes,60000);
 </script>
+  <script>
+
+function showStock(symbol){
+
+const stocks = {
+
+NVDA:{
+name:"NVIDIA",
+note:"The legendary $41.07 TikTok play.",
+focus:"AI chips king."
+},
+
+AVGO:{
+name:"Broadcom",
+note:"Your possible sequel play.",
+focus:"AI networking and custom chips."
+},
+
+AMD:{
+name:"AMD",
+note:"The challenger.",
+focus:"GPUs and AI acceleration."
+},
+
+TSM:{
+name:"Taiwan Semiconductor",
+note:"Makes chips for everybody.",
+focus:"AI manufacturing backbone."
+},
+
+PLTR:{
+name:"Palantir",
+note:"Data wizardry.",
+focus:"AI software and government contracts."
+}
+
+};
+
+document.getElementById("stockDetails").innerHTML = `
+<h3>${stocks[symbol].name}</h3>
+<p>${stocks[symbol].note}</p>
+<p>${stocks[symbol].focus}</p>
+`;
+
+}
+
+  </script>
+<script>
+
+function showStock(symbol){
+
+const stocks = {
+
+NVDA:{
+name:"NVIDIA",
+note:"The legendary $41.07 TikTok play.",
+focus:"AI chips king."
+},
+
+AVGO:{
+name:"Broadcom",
+note:"Your possible sequel play.",
+focus:"AI networking and custom chips."
+},
+
+AMD:{
+name:"AMD",
+note:"The challenger.",
+focus:"GPUs and AI acceleration."
+},
+
+TSM:{
+name:"Taiwan Semiconductor",
+note:"Makes chips for everybody.",
+focus:"AI manufacturing backbone."
+},
+
+PLTR:{
+name:"Palantir",
+note:"Data wizardry.",
+focus:"AI software and government contracts."
+}
+
+};
+
+document.getElementById("stockDetails").innerHTML = `
+<h3>${stocks[symbol].name}</h3>
+<p>${stocks[symbol].note}</p>
+<p>${stocks[symbol].focus}</p>
+`;
+
+}
+
+</script>
+  <script>
+
+function showStock(symbol){
+
+const stocks = {
+
+NVDA:{
+name:"NVIDIA",
+note:"The legendary $41.07 TikTok play.",
+focus:"AI chips king."
+},
+
+AVGO:{
+name:"Broadcom",
+note:"Your possible sequel play.",
+focus:"AI networking and custom chips."
+},
+
+AMD:{
+name:"AMD",
+note:"The challenger.",
+focus:"GPUs and AI acceleration."
+},
+
+TSM:{
+name:"Taiwan Semiconductor",
+note:"Makes chips for everybody.",
+focus:"AI manufacturing backbone."
+},
+
+PLTR:{
+name:"Palantir",
+note:"Data wizardry.",
+focus:"AI software and government contracts."
+}
+
+};
+
+document.getElementById("stockDetails").innerHTML = `
+<h3>${stocks[symbol].name}</h3>
+<p>${stocks[symbol].note}</p>
+<p>${stocks[symbol].focus}</p>
+`;
+
+}
+
+  </script>
 </body>
 </html>
