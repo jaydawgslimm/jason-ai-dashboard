@@ -1,26 +1,225 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JayDawgSlimm Command Center</title><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,Arial,sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+}
+
+header{
+padding:25px;
+}
+
+.portfolio{
+font-size:3.5rem;
+font-weight:700;
+}
+
+.gain{
+font-size:1.4rem;
+color:#00c805;
+margin-top:8px;
+}
+
+.mainChart{
+height:320px;
+margin:15px;
+border-radius:20px;
+background:linear-gradient(
+180deg,
+rgba(0,200,5,.18),
+rgba(0,200,5,.02)
+);
+border:1px solid #111;
+}
+
+.timeframes{
+display:flex;
+justify-content:center;
+gap:12px;
+padding:10px 0 20px;
+}
+
+.timeframes button{
+background:#111;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:999px;
+cursor:pointer;
+}
+
+.timeframes button.active{
+background:#00c805;
+color:black;
+font-weight:700;
+}
+
+.section{
+padding:20px;
+}
+
+.section h2{
+margin-bottom:15px;
+font-size:1.4rem;
+}
+
+.holding{
+background:#0a0a0a;
+border:1px solid #181818;
+border-radius:20px;
+margin-bottom:18px;
+padding:18px;
+}
+
+.topRow{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+}
+
+.symbol{
+font-size:1.4rem;
+font-weight:700;
+}
+
+.value{
+color:#00c805;
+font-weight:700;
+}
+
+.stockChart{
+height:120px;
+background:#050505;
+border-radius:12px;
+}
+
+.cryptoGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.crypto{
+background:#0a0a0a;
+border:1px solid #181818;
+border-radius:18px;
+padding:18px;
+text-align:center;
+}
+
+.cryptoName{
+font-size:1.2rem;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.watchlist{
+background:#0a0a0a;
+border:1px solid #181818;
+padding:15px;
+border-radius:15px;
+margin-bottom:10px;
+}
+
+.bottomNav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#050505;
+border-top:1px solid #151515;
+display:flex;
+justify-content:space-around;
+padding:14px;
+}
+
+.bottomNav div{
+color:#999;
+}
+
+.bottomNav .active{
+color:#00c805;
+font-weight:bold;
+}
+
+.spacer{
+height:90px;
+}
+
+</style></head><body><header><div class="portfolio">
 $1,006.23
-+$4.50 Today
-
-────────────────────
-
-[ MASSIVE PORTFOLIO CHART ]
-
-1D  1W  1M  3M  1Y  ALL
-
-────────────────────
-
-Top Holdings
-
-NVDA     52%
-AMD      22%
-AVGO      3%
-TSLA      3%
-
-────────────────────
-
-Today's Movers
-
-▲ NVDA
-▲ AMD
-▼ AVGO
-▲ XRP
+</div><div class="gain">
+▲ +$4.50 Today
+</div></header><div class="mainChart"></div><div class="timeframes">
+<button class="active">1D</button>
+<button>1W</button>
+<button>1M</button>
+<button>3M</button>
+<button>1Y</button>
+<button>ALL</button>
+</div><div class="section"><h2>Core Holdings</h2><div class="holding">
+<div class="topRow">
+<div class="symbol">NVDA</div>
+<div class="value">$522.71</div>
+</div>
+<div class="stockChart"></div>
+</div><div class="holding">
+<div class="topRow">
+<div class="symbol">AMD</div>
+<div class="value">$219.60</div>
+</div>
+<div class="stockChart"></div>
+</div><div class="holding">
+<div class="topRow">
+<div class="symbol">AVGO</div>
+<div class="value">$34.35</div>
+</div>
+<div class="stockChart"></div>
+</div><div class="holding">
+<div class="topRow">
+<div class="symbol">TSLA</div>
+<div class="value">$31.89</div>
+</div>
+<div class="stockChart"></div>
+</div></div><div class="section"><h2>Crypto</h2><div class="cryptoGrid"><div class="crypto">
+<div class="cryptoName">XRP</div>
+<div>-$2.87</div>
+</div><div class="crypto">
+<div class="cryptoName">DOGE</div>
+<div>-$19.76</div>
+</div><div class="crypto">
+<div class="cryptoName">ETH</div>
+<div>+$0.90</div>
+</div><div class="crypto">
+<div class="cryptoName">NEAR</div>
+<div>-$3.68</div>
+</div><div class="crypto">
+<div class="cryptoName">SHIB</div>
+<div>-$0.42</div>
+</div><div class="crypto">
+<div class="cryptoName">PEPE</div>
+<div>-$1.94</div>
+</div></div></div><div class="section"><h2>AI Watchlist</h2><div class="watchlist">IONQ</div>
+<div class="watchlist">IREN</div>
+<div class="watchlist">APLD</div>
+<div class="watchlist">SMCI</div>
+<div class="watchlist">MRVL</div>
+<div class="watchlist">INTC</div></div><div class="spacer"></div><div class="bottomNav">
+<div class="active">Home</div>
+<div>Stocks</div>
+<div>Crypto</div>
+<div>Watchlist</div>
+</div></body>
+</html>
