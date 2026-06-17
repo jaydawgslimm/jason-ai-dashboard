@@ -1,225 +1,214 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JayDawgSlimm Command Center</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JayDawgSlimm Alpha Terminal</title>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,Arial,sans-serif;
-}
-
+<style>
 body{
+margin:0;
 background:#000;
 color:white;
+font-family:Arial,sans-serif;
 }
 
 header{
-padding:25px;
+padding:20px;
 }
 
 .portfolio{
-font-size:3.5rem;
-font-weight:700;
+font-size:56px;
+font-weight:bold;
 }
 
-.gain{
-font-size:1.4rem;
+.green{
 color:#00c805;
-margin-top:8px;
 }
 
-.mainChart{
-height:320px;
-margin:15px;
-border-radius:20px;
-background:linear-gradient(
-180deg,
-rgba(0,200,5,.18),
-rgba(0,200,5,.02)
-);
-border:1px solid #111;
-}
-
-.timeframes{
+nav{
 display:flex;
-justify-content:center;
-gap:12px;
-padding:10px 0 20px;
+overflow:auto;
+gap:10px;
+padding:10px;
+background:#050505;
+border-bottom:1px solid #222;
 }
 
-.timeframes button{
+nav button{
 background:#111;
 color:white;
 border:none;
-padding:10px 16px;
-border-radius:999px;
+padding:12px 18px;
+border-radius:20px;
 cursor:pointer;
-}
-
-.timeframes button.active{
-background:#00c805;
-color:black;
-font-weight:700;
 }
 
 .section{
 padding:20px;
 }
 
-.section h2{
-margin-bottom:15px;
-font-size:1.4rem;
-}
-
-.holding{
-background:#0a0a0a;
-border:1px solid #181818;
+.card{
+background:#0d0d0d;
+border:1px solid #222;
 border-radius:20px;
-margin-bottom:18px;
-padding:18px;
-}
-
-.topRow{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:10px;
-}
-
-.symbol{
-font-size:1.4rem;
-font-weight:700;
-}
-
-.value{
-color:#00c805;
-font-weight:700;
-}
-
-.stockChart{
-height:120px;
-background:#050505;
-border-radius:12px;
-}
-
-.cryptoGrid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.crypto{
-background:#0a0a0a;
-border:1px solid #181818;
-border-radius:18px;
-padding:18px;
-text-align:center;
-}
-
-.cryptoName{
-font-size:1.2rem;
-font-weight:700;
-margin-bottom:8px;
-}
-
-.watchlist{
-background:#0a0a0a;
-border:1px solid #181818;
 padding:15px;
+margin-bottom:15px;
+}
+
+.chart{
+height:250px;
 border-radius:15px;
-margin-bottom:10px;
-}
-
-.bottomNav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:#050505;
-border-top:1px solid #151515;
+background:linear-gradient(
+180deg,
+rgba(0,200,5,.25),
+rgba(0,200,5,.02)
+);
 display:flex;
-justify-content:space-around;
-padding:14px;
-}
-
-.bottomNav div{
-color:#999;
-}
-
-.bottomNav .active{
+align-items:center;
+justify-content:center;
 color:#00c805;
 font-weight:bold;
 }
 
-.spacer{
-height:90px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
 }
 
-</style></head><body><header><div class="portfolio">
-$1,006.23
-</div><div class="gain">
-▲ +$4.50 Today
-</div></header><div class="mainChart"></div><div class="timeframes">
-<button class="active">1D</button>
-<button>1W</button>
-<button>1M</button>
-<button>3M</button>
-<button>1Y</button>
-<button>ALL</button>
-</div><div class="section"><h2>Core Holdings</h2><div class="holding">
-<div class="topRow">
-<div class="symbol">NVDA</div>
-<div class="value">$522.71</div>
+.tile{
+background:#111;
+padding:15px;
+border-radius:15px;
+text-align:center;
+}
+
+h2{
+margin-top:0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="portfolio">$1,006.23</div>
+<div class="green">▲ +$4.50 Today</div>
+</header>
+
+<nav>
+<button onclick="showTab('home')">Home</button>
+<button onclick="showTab('portfolio')">Portfolio</button>
+<button onclick="showTab('crypto')">Crypto</button>
+<button onclick="showTab('airadar')">AI Radar</button>
+<button onclick="showTab('scanner')">Scanner</button>
+<button onclick="showTab('fishing')">Fishing</button>
+</nav>
+
+<div id="home" class="section tab">
+
+<h2>Portfolio Performance</h2>
+
+<div class="chart">
+LIVE PORTFOLIO CHART
 </div>
-<div class="stockChart"></div>
-</div><div class="holding">
-<div class="topRow">
-<div class="symbol">AMD</div>
-<div class="value">$219.60</div>
+
 </div>
-<div class="stockChart"></div>
-</div><div class="holding">
-<div class="topRow">
-<div class="symbol">AVGO</div>
-<div class="value">$34.35</div>
+
+<div id="portfolio" class="section tab" style="display:none">
+
+<h2>Core Holdings</h2>
+
+<div class="card">
+<h3>NVDA</h3>
+<div class="chart">NVDA CHART</div>
 </div>
-<div class="stockChart"></div>
-</div><div class="holding">
-<div class="topRow">
-<div class="symbol">TSLA</div>
-<div class="value">$31.89</div>
+
+<div class="card">
+<h3>AMD</h3>
+<div class="chart">AMD CHART</div>
 </div>
-<div class="stockChart"></div>
-</div></div><div class="section"><h2>Crypto</h2><div class="cryptoGrid"><div class="crypto">
-<div class="cryptoName">XRP</div>
-<div>-$2.87</div>
-</div><div class="crypto">
-<div class="cryptoName">DOGE</div>
-<div>-$19.76</div>
-</div><div class="crypto">
-<div class="cryptoName">ETH</div>
-<div>+$0.90</div>
-</div><div class="crypto">
-<div class="cryptoName">NEAR</div>
-<div>-$3.68</div>
-</div><div class="crypto">
-<div class="cryptoName">SHIB</div>
-<div>-$0.42</div>
-</div><div class="crypto">
-<div class="cryptoName">PEPE</div>
-<div>-$1.94</div>
-</div></div></div><div class="section"><h2>AI Watchlist</h2><div class="watchlist">IONQ</div>
-<div class="watchlist">IREN</div>
-<div class="watchlist">APLD</div>
-<div class="watchlist">SMCI</div>
-<div class="watchlist">MRVL</div>
-<div class="watchlist">INTC</div></div><div class="spacer"></div><div class="bottomNav">
-<div class="active">Home</div>
-<div>Stocks</div>
-<div>Crypto</div>
-<div>Watchlist</div>
-</div></body>
+
+<div class="card">
+<h3>AVGO</h3>
+<div class="chart">AVGO CHART</div>
+</div>
+
+<div class="card">
+<h3>TSLA</h3>
+<div class="chart">TSLA CHART</div>
+</div>
+
+</div>
+
+<div id="crypto" class="section tab" style="display:none">
+
+<h2>Crypto War Room</h2>
+
+<div class="grid">
+<div class="tile">XRP</div>
+<div class="tile">DOGE</div>
+<div class="tile">BTC</div>
+<div class="tile">ETH</div>
+<div class="tile">SHIB</div>
+<div class="tile">PEPE</div>
+<div class="tile">NEAR</div>
+<div class="tile">BONK</div>
+</div>
+
+</div>
+
+<div id="airadar" class="section tab" style="display:none">
+
+<h2>AI Radar</h2>
+
+<div class="grid">
+<div class="tile">IONQ</div>
+<div class="tile">IREN</div>
+<div class="tile">APLD</div>
+<div class="tile">SMCI</div>
+<div class="tile">MRVL</div>
+<div class="tile">INTC</div>
+</div>
+
+</div>
+
+<div id="scanner" class="section tab" style="display:none">
+
+<h2>Opportunity Scanner</h2>
+
+<div class="card">AI Breakouts</div>
+<div class="card">Unusual Volume</div>
+<div class="card">Insider Buying</div>
+<div class="card">Earnings Countdown</div>
+
+</div>
+
+<div id="fishing" class="section tab" style="display:none">
+
+<h2>Louisiana Fishing Center</h2>
+
+<div class="card">Weather</div>
+<div class="card">Tides</div>
+<div class="card">Wind</div>
+<div class="card">Moon Phase</div>
+
+</div>
+
+<script>
+
+function showTab(tabName){
+
+document.querySelectorAll('.tab').forEach(tab=>{
+tab.style.display='none';
+});
+
+document.getElementById(tabName).style.display='block';
+
+}
+
+</script>
+
+</body>
 </html>
