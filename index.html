@@ -1,219 +1,37 @@
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JayDawgSlimm Command Center</title>
-
-<style>
-body{
-    background:#050505;
-    color:#00ff66;
-    font-family:Consolas,monospace;
-    margin:0;
-    padding:20px;
-    text-align:center;
-}
-
-h1{
-    text-shadow:0 0 20px #00ff66;
-}
-
-.card{
-    border:1px solid #00ff66;
-    border-radius:12px;
-    padding:20px;
-    margin:15px auto;
-    max-width:900px;
-    box-shadow:0 0 15px rgba(0,255,100,.3);
-}
-
-.clock{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.big{
-    font-size:28px;
-    font-weight:bold;
-}
-
-.progress{
-    width:90%;
-    height:25px;
-    border:1px solid #00ff66;
-    margin:15px auto;
-}
-
-.bar{
-    width:10%;
-    height:100%;
-    background:#00ff66;
-}
-
-.ticker{
-    display:inline-block;
-    padding:10px 15px;
-    margin:5px;
-    border:1px solid #00ff66;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.ticker:hover{
-    background:#00ff66;
-    color:black;
-}
-
-.blink{
-    animation:blink 1.5s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:.3;
-    }
-}
-</style>
-
-</head>
-<body>
-
-<h1>🚀 JAYDAWGSLIMM COMMAND CENTER 🚀</h1>
-
 <div class="card">
-    <div id="clock" class="clock"></div>
-    <div id="market"></div>
-</div>
+    <h2>🚀 AI Portfolio Radar</h2>
 
-<div class="card">
-    <h2>💰 MISSION</h2>
-    <div class="big">$1,000 ➜ $10,000</div>
-
-    <div class="progress">
-        <div class="bar"></div>
+    <div class="stock" id="NVDA">
+        <span>NVIDIA</span>
+        <span class="price">$0.00</span>
     </div>
 
-    <p>Rule #1: Don't do anything stupid.</p>
-</div>
-
-<div class="card">
-    <h2>🤖 AI WATCHLIST</h2>
-
-    <div class="ticker" onclick="showStock('NVDA')">NVDA</div>
-    <div class="ticker" onclick="showStock('AVGO')">AVGO</div>
-    <div class="ticker" onclick="showStock('AMD')">AMD</div>
-    <div class="ticker" onclick="showStock('TSM')">TSM</div>
-    <div class="ticker" onclick="showStock('PLTR')">PLTR</div>
-
-    <div id="stockDetails" style="margin-top:20px;"></div>
-</div>
-
-<div class="card">
-    <h2>🏆 HALL OF FAME</h2>
-
-    <p><b>July 2022</b></p>
-    <p>Bought $41.07 of NVDA</p>
-    <p class="blink">LEGENDARY HOLD</p>
-</div>
-
-<div class="card">
-    <h2>📊 MARKET BOARD</h2>
-
-    <div id="quotes">
-        Loading...
+    <div class="stock" id="AVGO">
+        <span>Broadcom</span>
+        <span class="price">$0.00</span>
     </div>
-</div>
 
-<div class="card">
-    <h2>⚡ STATUS</h2>
+    <div class="stock" id="PLTR">
+        <span>Palantir</span>
+        <span class="price">$0.00</span>
+    </div>
 
-    <p>Monitoring AI takeover.</p>
-    <p>Awaiting riches.</p>
+    <div class="stock" id="AMD">
+        <span>AMD</span>
+        <span class="price">$0.00</span>
+    </div>
 </div>
 
 <script>
+const stocks = ["NVDA","AVGO","PLTR","AMD"];
 
-function updateClock(){
-
-    const now = new Date();
-
-    document.getElementById("clock").innerHTML =
-        now.toLocaleString();
-
-    const day = now.getDay();
-    const hour = now.getHours();
-
-    if(day !== 0 && day !== 6 && hour >= 8 && hour < 15){
-        document.getElementById("market").innerHTML =
-            "🟢 MARKET HOURS";
-    } else {
-        document.getElementById("market").innerHTML =
-            "🔴 MARKET CLOSED";
-    }
+function updateStocks(){
+    stocks.forEach(stock=>{
+        const randomPrice=(Math.random()*500+100).toFixed(2);
+        document.querySelector(`#${stock} .price`).innerText="$"+randomPrice;
+    });
 }
 
-setInterval(updateClock,1000);
-updateClock();
-
-const stocks = {
-
-NVDA:{
-    name:"NVIDIA",
-    note:"The legendary $41.07 TikTok play.",
-    focus:"AI chips king."
-},
-
-AVGO:{
-    name:"Broadcom",
-    note:"Your possible sequel play.",
-    focus:"AI networking and custom chips."
-},
-
-AMD:{
-    name:"AMD",
-    note:"The challenger.",
-    focus:"GPUs and AI acceleration."
-},
-
-TSM:{
-    name:"Taiwan Semiconductor",
-    note:"Makes chips for everybody.",
-    focus:"AI manufacturing backbone."
-},
-
-PLTR:{
-    name:"Palantir",
-    note:"Data wizardry.",
-    focus:"AI software and government contracts."
-}
-
-};
-
-function showStock(symbol){
-
-document.getElementById("stockDetails").innerHTML =
-"<h3>" + stocks[symbol].name + "</h3>" +
-"<p>" + stocks[symbol].note + "</p>" +
-"<p>" + stocks[symbol].focus + "</p>";
-
-}
-
-function loadQuotes(){
-
-document.getElementById("quotes").innerHTML =
-"<p>NVDA 🚀</p>" +
-"<p>AVGO 🚀</p>" +
-"<p>AMD 🚀</p>" +
-"<p>TSM 🚀</p>" +
-"<p>PLTR 🚀</p>";
-
-}
-
-loadQuotes();
-
+updateStocks();
+setInterval(updateStocks,3000);
 </script>
-
-</body>
-</html>
